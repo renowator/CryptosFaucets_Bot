@@ -1,0 +1,127 @@
+# Cryptos bot
+
+
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
+
+
+
+## About The Project
+
+Cryptos Faucets is a newly established cryptocurrency faucet company which offers free cryptocurrency rolls every hour.
+
+This script is developed to automate rolls on Cryptos Faucets websites given that all your accounts have same email address and password. Please review the code to make sure I am not storing your credentials in any way. The credentials are entered upon launching the bot and will be deleted when the bot is shut down.
+
+The bot is performing quite well, but still needs to be improved for additional error handling and smarter behaviour to make sure rolls on each website are made every hour. Apart from that more security can be added to protect your credentials.
+
+Please feel free to use, modify or improve this bot! 
+
+To support this project please register on Cryptos Faucets websites using my referral links and use the bot often:
+https://free-tron.com/?ref=2879
+https://freecardano.com/?ref=221297
+https://freebitcoin.io/?ref=303045
+https://freeethereum.com/?ref=27517
+https://freebinancecoin.com/?ref=27615
+https://coinfaucet.io/?ref=630522
+
+*Notice:* The USDC, USDT, STEAM and NEM faucets are not included. You can append the urls to these websites in .js file if you wish to automate the rolls for these as well. 
+
+### Built With
+* [Node.js](https://nodejs.org/en/)
+* [Puppeteer](https://github.com/puppeteer/puppeteer)
+* [Chromium](https://www.chromium.org/)
+
+
+
+## Getting Started
+
+To run this script you need to install Node.js and Puppeteer, Puppeteer-select and Chromium web browser.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+```sh
+npm install npm
+```
+
+* puppeteer
+```sh
+npm install puppeteer
+```
+
+* puppeteer-select
+```sh
+npm install puppeteer-select
+```
+
+* chromium-browser
+```sh
+apt-get install chromium-browser
+````
+
+
+### Installation
+
+To use this bot as a standalone application instead of console you will need to use nwjs package: https://github.com/nwjs/nw.js
+
+Please refer to their Wiki on building an app: https://github.com/nwjs/nw.js/wiki
+
+You should download nwjs package, then depending on your system provide package.nw file to nw.exe application. (Different for Mac, more information: https://nwjs.readthedocs.io/en/latest/For%20Users/Package%20and%20Distribute/#package-your-app )
+
+
+## Usage
+
+### Using the console and console_bot.js
+
+To run console_bot.js you need to specify console environment variables EMAIL and PASS. Then you can launch the bot with
+
+
+````
+node console_bot
+````
+
+### Using executable obtained from nwjs
+
+Once you created your executable file, the bot will launch in a new window. It will prompt you to enter email and password when launched. The bot should start working and display your balances on Cryptos Faucets websites in the browser window.
+
+
+## Roadmap
+
+The project was developed for personal use. The bot is usable, but might need some improvements like advanced password protection, ErrorHandling, UI and bot contol.
+
+
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+## License
+
+Distributed under the MIT License.
+
+
+## Contact
+
+Nicholas Stepanov - [renowator](https://github.com/renowator) - n_stepanov@hotmail.com
+
+Project Link: [https://github.com/renowator/CryptosFaucets_Bot](https://github.com/renowator/CryptosFaucets_Bot)
+
+
