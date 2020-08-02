@@ -28,11 +28,22 @@ Please feel free to use, modify or improve this bot!
 
 To support this project please register on Cryptos Faucets websites using my referral links and use the bot often:
 https://free-tron.com/?ref=2879
+
+
 https://freecardano.com/?ref=221297
+
+
 https://freebitcoin.io/?ref=303045
+
+
 https://freeethereum.com/?ref=27517
+
+
 https://freebinancecoin.com/?ref=27615
+
+
 https://coinfaucet.io/?ref=630522
+
 
 *Notice:* The USDC, USDT, STEAM and NEM faucets are not included. You can append the urls to these websites in .js file if you wish to automate the rolls for these as well. 
 
