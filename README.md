@@ -2,6 +2,8 @@
 
 bot.js output example:
 
+
+````
 Attempt to collect coins:
 17 HH || Date:8.2
 You have received 0.00110457 Balance: 0.09470700 ADA
@@ -12,6 +14,8 @@ You have received 0.00052687 Balance: 0.05957524 XRP
 You have received 0.00001471 Balance: 0.00004451 BNB
 All coins were collected!
 Sleep for an hour
+````
+
 
 
 ## Table of Contents
