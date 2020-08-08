@@ -79,7 +79,8 @@ To run this script you need to install Node.js and Puppeteer, Puppeteer-select a
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Install Node.js:
+https://nodejs.org/en/download/
 * npm
 ```sh
 npm install npm
@@ -107,8 +108,9 @@ To use this bot as a standalone application instead of console you will need to 
 
 Please refer to their Wiki on building an app: https://github.com/nwjs/nw.js/wiki
 
-You should download nwjs package, then depending on your system provide package.nw file to nw.exe application. (Different for Mac, more information: https://nwjs.readthedocs.io/en/latest/For%20Users/Package%20and%20Distribute/#package-your-app )
+You should download nwjs package, then depending on your system provide package.nw (Zip with different extension) file to nw.exe application. (Different for Mac, more information: https://nwjs.readthedocs.io/en/latest/For%20Users/Package%20and%20Distribute/#package-your-app )
 
+Or download all code from this package directly into nwjs package and run nw.exe
 
 ## Usage
 
