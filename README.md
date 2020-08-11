@@ -1,3 +1,27 @@
+![BTC](https://www.cryptoimgs.com/img/freebitcoin/banners/Banner468x60.jpg)
+[BTC](https://freebitcoin.io/?ref=303045)
+
+
+![ETH](https://www.cryptoimgs.com/img/freeethereum/banners/Banner468x60.jpg)
+[ETH](https://freeethereum.com/?ref=27517)
+
+
+![XRP](https://www.cryptoimgs.com/img/coinfaucet/banners/Banner468x60.jpg)
+[XRP](https://coinfaucet.io/?ref=630522)
+
+
+![ADA](https://www.cryptoimgs.com/img/freecardano/banners/Banner468x60.jpg)
+[ADA](https://freecardano.com/?ref=221297)
+
+
+![TRX](https://www.cryptoimgs.com/img/freetron/banners/Banner468x60.jpg)
+[TRX](https://free-tron.com/?ref=2879)
+
+
+![BNB](https://www.cryptoimgs.com/img/freebinancecoin/banners/Banner468x60.jpg)
+[BNB](https://freebinancecoin.com/?ref=27615)
+
+
 # Cryptos bot
 
 bot.js output example:
@@ -17,6 +41,7 @@ Sleep for an hour
 ````
 
 
+Tip: If one of the websites produces errors you can manually claim the coin, then enter free roll code for twitter (https://twitter.com/cryptosfaucets) on all the websites, so the bot keeps running smoothly. Avoid the bot executing every 10 minutes, unless necessary.
 
 ## Table of Contents
 
@@ -159,3 +184,9 @@ Nicholas Stepanov - [renowator](https://github.com/renowator) - n_stepanov@hotma
 Project Link: [https://github.com/renowator/CryptosFaucets_Bot](https://github.com/renowator/CryptosFaucets_Bot)
 
 
+
+## Another faucet and bot 
+
+![Freebico.in](https://static1.freebitco.in/banners/468x60-3.png)
+[Freebitco.in](https://freebitco.in/?r=37175004)
+[BitBot](https://my.bitbot.plus/)
