@@ -106,6 +106,8 @@ apt-get install chromium-browser
 
 To use this bot as a standalone application instead of console you will need to use nwjs package: https://github.com/nwjs/nw.js
 
+YOU CAN ADD THE EXECUTABLE TO AUTOSTART 
+
 Please refer to their Wiki on building an app: https://github.com/nwjs/nw.js/wiki
 
 You should download nwjs package, then depending on your system provide package.nw (Zip with different extension) file to nw.exe application. (Different for Mac, more information: https://nwjs.readthedocs.io/en/latest/For%20Users/Package%20and%20Distribute/#package-your-app )
