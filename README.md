@@ -187,6 +187,5 @@ Project Link: [https://github.com/renowator/CryptosFaucets_Bot](https://github.c
 
 ## Another faucet and bot 
 
-![Freebico.in](https://static1.freebitco.in/banners/468x60-3.png)
-[Freebitco.in](https://freebitco.in/?r=37175004)
+[![Freebico.in](https://static1.freebitco.in/banners/468x60-3.png)](https://freebitco.in/?r=37175004)
 [BitBot](https://my.bitbot.plus/)
