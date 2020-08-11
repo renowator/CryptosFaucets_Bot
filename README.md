@@ -1,24 +1,24 @@
-[![BTC](https://www.cryptoimgs.com/img/freebitcoin/banners/Banner468x60.jpg)
+[![BTC](https://www.cryptoimgs.com/img/freebitcoin/banners/Banner728x90.jpg)
 ](https://freebitcoin.io/?ref=303045)
 
 
-[![ETH](https://www.cryptoimgs.com/img/freeethereum/banners/Banner468x60.jpg)
+[![ETH](https://www.cryptoimgs.com/img/freeethereum/banners/Banner728x90.jpg)
 ](https://freeethereum.com/?ref=27517)
 
 
-[![XRP](https://www.cryptoimgs.com/img/coinfaucet/banners/Banner468x60.jpg)
+[![XRP](https://www.cryptoimgs.com/img/coinfaucet/banners/Banner728x90.jpg)
 ](https://coinfaucet.io/?ref=630522)
 
 
-[![ADA](https://www.cryptoimgs.com/img/freecardano/banners/Banner468x60.jpg)
+[![ADA](https://www.cryptoimgs.com/img/freecardano/banners/Banner728x90.jpg)
 ](https://freecardano.com/?ref=221297)
 
 
-[![TRX](https://www.cryptoimgs.com/img/freetron/banners/Banner468x60.jpg)
+[![TRX](https://www.cryptoimgs.com/img/freetron/banners/Banner728x90.jpg)
 ](https://free-tron.com/?ref=2879)
 
 
-[![BNB](https://www.cryptoimgs.com/img/freebinancecoin/banners/Banner468x60.jpg)
+[![BNB](https://www.cryptoimgs.com/img/freebinancecoin/banners/Banner728x90.jpg)
 ](https://freebinancecoin.com/?ref=27615)
 
 
@@ -188,4 +188,7 @@ Project Link: [https://github.com/renowator/CryptosFaucets_Bot](https://github.c
 ## Another faucet and bot 
 
 [![Freebico.in](https://static1.freebitco.in/banners/468x60-3.png)](https://freebitco.in/?r=37175004)
+
+
+
 [BitBot](https://my.bitbot.plus/)
