@@ -30,8 +30,9 @@ function sleep(ms) {
 (async () => {
  const email  = prompt("Enter your email","<here>");
  const pass = prompt("Enter your password", "<here>");
- var welcome = "----------------- BOT STARING -----------------\nWorking on email:" + email + "\n                   Good Luck!\n";
- const websites = ["https://freecardano.com","https://freeethereum.com/free","https://freebitcoin.io/free","https://free-tron.com","https://coinfaucet.io/free", "https://freebinancecoin.com/free"]
+ var welcome = "<br>----------------- BOT STARING -----------------<br>Working on email:" + email + "<br>                   Good Luck!<br>";
+  document.getElementById('results').innerHTML += welcome;
+ const websites = ["https://freecardano.com/free","https://freeethereum.com/free","https://freebitcoin.io/free","https://free-tron.com/free","https://coinfaucet.io/free", "https://freebinancecoin.com/free", "https://freedash.io/free"]
 while(true){
 
   var loopError = false;

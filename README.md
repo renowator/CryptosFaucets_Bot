@@ -22,6 +22,9 @@
 ](https://freebinancecoin.com/?ref=27615)
 
 
+[![DASH](https://www.cryptoimgs.com/img/freedash/banners/Banner728x90.jpg)
+](https://freedash.io/?ref=7688)
+
 # Cryptos bot
 
 bot.js output example:
@@ -88,6 +91,7 @@ https://freebinancecoin.com/?ref=27615
 
 https://coinfaucet.io/?ref=630522
 
+https://freedash.io/?ref=7688
 
 *Notice:* The USDC, USDT, STEAM and NEM faucets are not included. You can append the urls to these websites in .js file if you wish to automate the rolls for these as well. 
 
