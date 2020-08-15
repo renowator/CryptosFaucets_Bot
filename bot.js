@@ -41,14 +41,14 @@ while(true){
 
   var today = new Date();
   var date = '      ' + today.getHours()+' HH || Date:'+(today.getMonth()+1)+'.'+today.getDate();
-  document.getElementById('results').innerHTML += '<br> Attempt to collect coins: <br>' + date;
+  document.getElementById('results').innerHTML += '<br> Attempt to collect coins: <br>' + date +'<br>          Good Luck!';
 for (var i = 0; i < websites.length; i++) {
 
   try{
 
 
   await page.goto(websites[i])
-  await sleep(200)
+  await sleep(5500)
   await page.type('input[name=email]', email, {delay: 20})
   await page.type('input[name=password]', pass, {delay: 20})
   const element_log = await select(page).getElement('button:contains(LOGIN!)');
@@ -67,7 +67,7 @@ for (var i = 0; i < websites.length; i++) {
 }
 catch(e){
 var message = "Error was encountered on: " + websites[i];
-document.getElementById('results').innerHTML += '<br>!!!!!!!!!!!!!!!!!!!!!!!!!<br>' + message + '<br>!!!!!!!!!!!!!!!!!!!!!!!!!<br>'
+document.getElementById('results').innerHTML += '<br>!!!!!!!!!!!!!!!!!!!!!!!!!<br>' + message + '<br>!!!!!!!!!!!!!!!!!!!!!!!!!<br>' + e.message;
 loopError = true
 // catch block end
 }
@@ -82,7 +82,7 @@ loopError = true
   } else{
   console.log('!!!!!!!!!!!!!!!!! All coins collected succesfully !!!!!!!!!!!!!!!!!!!!!!')
   document.getElementById('results').innerHTML += '<br>All coins were collected!<br>Sleep for an hour';
-  await sleep(3600000);
+  await sleep(3595000);
   }
 // while loop end
 }
