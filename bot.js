@@ -50,7 +50,7 @@ for (var i = 0; i < websites.length; i++) {
   await page.goto(websites[i])
   var connect = false;
   var count = 0
-  while (!connect || count >= 20){
+  while (!connect && count <= 20){
   try {
   count = count + 1;
   await page.waitForSelector("input[name=email]", { timeout: 15000 })
