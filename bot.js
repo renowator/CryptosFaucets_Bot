@@ -31,7 +31,7 @@ function sleep(ms) {
  const email  = prompt("Enter your email","<here>");
  const pass = prompt("Enter your password", "<here>");
  var welcome = "----------------- BOT STARING -----------------\nWorking on email:" + email + "\n                   Good Luck!\n";
- const websites = ["https://freecardano.com","https://freeethereum.com","https://freebitcoin.io","https://free-tron.com","https://coinfaucet.io", "https://freebinancecoin.com/"]
+ const websites = ["https://freecardano.com","https://freeethereum.com/free","https://freebitcoin.io/free","https://free-tron.com","https://coinfaucet.io/free", "https://freebinancecoin.com/free"]
 while(true){
 
   var loopError = false;
@@ -48,7 +48,19 @@ for (var i = 0; i < websites.length; i++) {
 
 
   await page.goto(websites[i])
-  await sleep(5500)
+  var connect = false;
+  var count = 0
+  while (!connect || count >= 20){
+  try {
+  count = count + 1;
+  await page.waitForSelector("input[name=email]", { timeout: 15000 })
+  connect = true
+}  catch{
+  await sleep(1000)
+  await page.goto(websites[i])
+}
+}
+  await sleep(5000)
   await page.type('input[name=email]', email, {delay: 20})
   await page.type('input[name=password]', pass, {delay: 20})
   const element_log = await select(page).getElement('button:contains(LOGIN!)');
@@ -67,7 +79,7 @@ for (var i = 0; i < websites.length; i++) {
 }
 catch(e){
 var message = "Error was encountered on: " + websites[i];
-document.getElementById('results').innerHTML += '<br>!!!!!!!!!!!!!!!!!!!!!!!!!<br>' + message + '<br>!!!!!!!!!!!!!!!!!!!!!!!!!<br>' + e.message;
+document.getElementById('results').innerHTML += '<br>!!!!!!!!!!!!!!!!!!!!!!!!!<br>' + message + '<br>!!!!!!!!!!!!!!!!!!!!!!!!!<br>' + e.message ;
 loopError = true
 // catch block end
 }
