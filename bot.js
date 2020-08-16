@@ -35,7 +35,7 @@ function sleep(ms) {
 while(true){
 
   var loopError = false;
-  const browser = await puppeteer.launch({headless: false});
+  const browser = await puppeteer.launch({headless: true});
   const page = await browser.newPage();
   await page.setViewport({ width: 1866, height: 768});
 
@@ -56,11 +56,11 @@ for (var i = 0; i < websites.length; i++) {
   await page.waitForSelector("input[name=email]", { timeout: 15000 })
   connect = true
 }  catch{
-  await sleep(1000)
+  await sleep(100)
   await page.goto(websites[i])
 }
 }
-  await sleep(5000)
+  await sleep(500)
   await page.type('input[name=email]', email, {delay: 20})
   await page.type('input[name=password]', pass, {delay: 20})
   await sleep(500)
