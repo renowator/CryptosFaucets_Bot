@@ -1,3 +1,7 @@
+
+### Use CryptosFaucets_Bot  bot.js nwjs app to automate crypto faucet claims on Windows or Linux
+### Use CryptosFaucets_Bot console_bot.js to automate crypto faucet clims on Mac through terminal
+#### Register here:
 [![BTC](https://www.cryptoimgs.com/img/freebitcoin/banners/Banner728x90.jpg)
 ](https://freebitcoin.io/?ref=303045)
 
@@ -27,18 +31,44 @@
 
 # Cryptos bot
 
+
+
+
 bot.js output example:
 
 
 ````
 Attempt to collect coins:
-17 HH || Date:8.2
-You have received 0.00110457 Balance: 0.09470700 ADA
-You have received 0.00000082 Balance: 0.00003757 ETH
-You have received 0.00000003 Balance: 0.00000228 BTC
-You have received 0.01578117 Balance: 0.59722029 TRX
-You have received 0.00052687 Balance: 0.05957524 XRP
-You have received 0.00001471 Balance: 0.00004451 BNB
+12 HH || Date:8.17
+Good Luck!
+
+Lucky Number: 0 5 0 0 9
+You have received 0.00000003
+Balance: 0.00001023 BTC
+
+Lucky Number: 0 5 1 9 7
+You have received 0.00000070
+Balance: 0.00023902 ETH
+
+Lucky Number: 0 1 9 1 8
+You have received 0.00000304
+Balance: 0.00012706 DASH
+
+Lucky Number: 0 3 4 8 4
+You have received 0.00001291
+Balance: 0.00352234 BNB
+
+Lucky Number: 0 2 8 8 9
+You have received 0.00050017
+Balance: 0.24599612 XRP
+
+Lucky Number: 0 8 1 1 4
+You have received 0.00107991
+Balance: 0.38953877 ADA
+
+Lucky Number: 0 6 5 9 4
+You have received 0.01023541
+Balance: 4.41411428 TRX
 All coins were collected!
 Sleep for an hour
 ````
