@@ -31,7 +31,7 @@ function sleep(ms) {
  const email  = prompt("Enter your email","<here>");
  const pass = prompt("Enter your password", "<here>");
  var welcome = '<br>----------------- BOT STARING -----------------<br>Working on email:" + email + "<br>                   Good Luck!<br>';
- const websites = ["https://freecardano.com/free","https://freeethereum.com/free","https://freebitcoin.io/free","https://free-tron.com/free","https://coinfaucet.io/free", "https://freebinancecoin.com/free", "https://freedash.io/free"]
+ const websites = ["https://freebitcoin.io/free", "https://freeethereum.com/free", "https://freedash.io/free","https://freebinancecoin.com/free","https://coinfaucet.io/free", "https://freecardano.com/free","https://free-tron.com/free"]
 while(true){
 
   var loopError = false;
@@ -72,9 +72,10 @@ for (var i = 0; i < websites.length; i++) {
   await element_roll.click()
   await sleep(3000);
   // Get inner HTMLs
-  const innerReward = await page.evaluate(() => document.querySelector('.result').innerText);
   const innerBalance = await page.evaluate(() => document.querySelector('.navbar-coins').innerText);
-  var balance = innerReward + "\nBalance:                 " + innerBalance;
+  const luckyNums = await page.evaluate(() => document.querySelector('.lucky-numbers').innerText);
+  const innerReward = await page.evaluate(() => document.querySelector('.result').innerText);
+  var balance = "<br>  Lucky Number: " + luckyNums + "<br>" + innerReward + "<br>Balance:                 " + innerBalance;
   document.getElementById('results').innerHTML += '<br>' + balance
 
 }
