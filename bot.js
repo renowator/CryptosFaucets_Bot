@@ -117,14 +117,14 @@ loopError = true
   await browser.close()
   if (loopError){
   document.getElementById('results').innerHTML += '<br>Not all coins were collected.<br>Sleep for 10 minutes';
-document.getElementById('hash_res').innerHTML = '<br> An error was encountered <br>';
   useHash = false;
   myHash = "";
   var counter = 0;
   while (counter < 600){
-  // Sleep 60 seconds
-  await sleep(100);
+  // Sleep 1 second
+  await sleep(1000);
   counter = counter + 1;
+  document.getElementById('hash_res').innerHTML = '<br>An error was encountered <br>Time since last roll attempt: ' + parseInt(counter/60) + ' : ' + counter%60;
   if(useHash){break;}
   }
   } else{
@@ -135,9 +135,10 @@ document.getElementById('hash_res').innerHTML = '<br> An error was encountered <
 
   var counter = 0;
   while (counter < 3600){
-  // Sleep 60 seconds
-  await sleep(100);
+  // Sleep 1 second
+  await sleep(1000);
   counter = counter + 1;
+  document.getElementById('hash_res').innerHTML = '<br>Time since last roll attempt: ' + parseInt(counter/60) + ' : ' + counter%60;
   if(useHash){break;}
   }
 
