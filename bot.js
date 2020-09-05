@@ -117,6 +117,7 @@ loopError = true
   await browser.close()
   if (loopError){
   document.getElementById('results').innerHTML += '<br>Not all coins were collected.<br>Sleep for 10 minutes';
+document.getElementById('hash_res').innerHTML = '<br> An error was encountered <br>';
   useHash = false;
   myHash = "";
   var counter = 0;
@@ -131,7 +132,7 @@ loopError = true
   document.getElementById('results').innerHTML += '<br>All coins were collected!<br>Sleep for an hour';
   useHash = false;
   myHash = "";
-    document.getElementById('hash_res').innerHTML = '<br> An error was encountered <br>';
+
   var counter = 0;
   while (counter < 3600){
   // Sleep 60 seconds
