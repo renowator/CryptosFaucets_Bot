@@ -116,7 +116,7 @@ loopError = true
   useHash = false;
   myHash = "";
   var minCounter = 0;
-  while (minCounter < 60 || useHash){
+  while (minCounter < 60 && !useHash){
   // Sleep 60 seconds
   await sleep(59990);
   minCounter = minCounter + 1;
