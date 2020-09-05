@@ -124,9 +124,9 @@ loopError = true
   var counter = 0;
   while (counter < 600){
   // Sleep 1 second
-  await sleep(1000);
+  await sleep(999);
   counter = counter + 1;
-  document.getElementById('hash_res').innerHTML = '<br>An error was encountered <br>Time since last roll attempt: ' + parseInt(counter/60) + ' : ' + counter%60;
+  document.getElementById('hash_res').innerHTML = '<br>An error was encountered <br>Time since last roll attempt: ' + parseInt((600-counter)/60) + ' : ' + (600-counter)%60;
   if(useHash){break;}
   }
   } else{
@@ -138,9 +138,9 @@ loopError = true
   var counter = 0;
   while (counter < 3600){
   // Sleep 1 second
-  await sleep(1000);
+  await sleep(999);
   counter = counter + 1;
-  document.getElementById('hash_res').innerHTML = '<br>Time since last roll attempt: ' + parseInt(counter/60) + ' : ' + counter%60;
+  document.getElementById('hash_res').innerHTML = '<br>Time to new roll: ' + parseInt((3600-counter)/60) + ' : ' + (3600-counter)%60;
   if(useHash){break;}
   }
 
