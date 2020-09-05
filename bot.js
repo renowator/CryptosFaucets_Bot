@@ -83,8 +83,8 @@ for (var i = 0; i < websites.length; i++) {
   await page.waitForNavigation();
   await page.goto(websites[i]);
   await sleep(100);
-  const check = await select(page).getElement('button:contains(ROLL!)');
-  if (check != null){
+  const check = await page.evaluate(() => document.querySelector('.timeout-container'))
+  if ( check == null){
     document.getElementById('hash_res').innerHTML = '<br> Code used succesfully! <br>';
   }
   else{
