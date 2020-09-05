@@ -1,6 +1,7 @@
 
 ### Use CryptosFaucets_Bot  bot.js nwjs app to automate crypto faucet claims on Windows or Linux
 ### Use CryptosFaucets_Bot console_bot.js to automate crypto faucet claims on Mac through terminal
+### Now you can enter Twitter free roll codes through the bot!
 #### Register here:
 [![BTC](https://www.cryptoimgs.com/img/freebitcoin/banners/Banner728x90.jpg)
 ](https://freebitcoin.io/?ref=303045)
