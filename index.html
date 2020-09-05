@@ -5,40 +5,74 @@
   <body>
 
     <script src="bot.js"> </script>
-<div id="window" style="height:500px;
-     width:500px;">
+<div id="window" style="margin-top: 55px;
+    display: block;
+    max-width: 1200px;
+    height: 90%;
+    width: 80%;
+    position: relative;
+    align-content:center;
+    text-align: center;
+    left:10%;
+    top:5%;
+    opacity: 85%;
+    border: 12px solid black;
+    border-radius: 10px;
+    background-color: darkgray;
+    color:black;
+    font-size: 100%;
+    font-weight: bold;
+    padding-bottom: 15px;
+    font-family: sans-serif;">
 <div id="main">
 To use this bot please register on the following websites using same email/password combination:<br>
       <a href="https://freebitcoin.io/?ref=303045">
-         BTC
-      </a><br>
+        <img alt="BTC" src="https://www.cryptoimgs.com/img/freebitcoin/banners/Banner468x60.jpg"
+         width="486" height="60">
+      </a>
       <a href="https://freeethereum.com/?ref=27517">
-         ETH
+        <img alt="ETH" src="https://www.cryptoimgs.com/img/freeethereum/banners/Banner468x60.jpg"
+        width="486" height="60">
       </a><br>
       <a href="https://coinfaucet.io/?ref=630522">
-         XRP
-      </a><br>
+        <img alt="XRP" src="https://www.cryptoimgs.com/img/coinfaucet/banners/Banner468x60.jpg"
+        width="486" height="60">
+      </a>
       <a href="https://freecardano.com/?ref=221297">
-         ADA
+        <img alt="ADA" src="https://www.cryptoimgs.com/img/freecardano/banners/Banner468x60.jpg"
+        width="486" height="60">
       </a><br>
       <a href="https://free-tron.com/?ref=2879">
-         TRX
-      </a><br>
+        <img alt="TRX" src="https://www.cryptoimgs.com/img/freetron/banners/Banner468x60.jpg"
+        width="486" height="60">
+      </a>
       <a href="https://freebinancecoin.com/?ref=27615">
-         BNB
+        <img alt="BNB" src="https://www.cryptoimgs.com/img/freebinancecoin/banners/Banner468x60.jpg"
+        width="486" height="60">
       </a><br>
       <a href="https://freedash.io/?ref=7688">
-         DASH
+        <img alt="DASH" src="https://www.cryptoimgs.com/img/freedash/banners/Banner468x60.jpg"
+        width="486" height="60">
+      </a>
+      <a href="https://freechain.link/?ref=1166">
+        <img alt="LINK" src="https://www.cryptoimgs.com/img/freechain/banners/Banner468x60.jpg"
+        width="468" height="60">
       </a><br>
 Welcome to Cryptos bot, on this page you will see your balances </div>
 <div id="results" style="height:200px;
      width:100%;
      overflow-y:scroll;
-     cursor:pointer"> </div>
+     cursor:pointer;
+     border: 2px solid black;"> </div>
 <div id="hash_in">
-  <input name="searchTxt" type="text" maxlength="512" id="hashTxt" class="hashField" placeholder="Enter Coinfaucets code here"/>
-<input id="clickme" type="button" value="Submit code" onclick="useHash = true; myHash = document.querySelector('#hashTxt').value;"/>
+  <a href='https://twitter.com/cryptosfaucets'> Get codes here</a>
+  <input name="searchTxt" type="text" maxlength="512" id="hashTxt" class="hashField" placeholder="Enter Coinfaucets code"/>
+<input id="clickme" type="button" value="Submit code" onclick="useHash = true;
+myHash = document.querySelector('#hashTxt').value;
+document.getElementById('hash_res').innerHTML = '<br> Code received! It will be used soon. <br>' + myHash;
+"/>
 </div>
+<div id="hash_res"></div>
 </div>
   </body>
 </html>
