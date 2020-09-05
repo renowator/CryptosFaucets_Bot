@@ -44,7 +44,7 @@ while(true){
   const browser = await puppeteer.launch({ headless: true});
   const page = await browser.newPage();
   await page.setViewport({ width: 1866, height: 768});
-
+  var price = "";
   var today = new Date();
   var date = '      ' + today.getHours()+' HH || Date:'+(today.getMonth()+1)+'.'+today.getDate();
   document.getElementById('results').innerHTML += '<br> Attempt to collect coins: <br>' + date +'<br>          Good Luck!';
@@ -72,6 +72,8 @@ for (var i = 0; i < websites.length; i++) {
   await page.type('input[name=email]', email, {delay: 20})
   await page.type('input[name=password]', pass, {delay: 20})
   await sleep(100)
+  price = await page.evaluate(() => document.querySelector('.navbar-coins').innerText);
+  document.getElementById('price').innerHTML += '<br>'+price;
   const element_log = await select(page).getElement('button:contains(LOGIN!)');
   await element_log.click()
   await page.waitForNavigation();
@@ -143,6 +145,7 @@ loopError = true
   }
 
   }
+  document.getElementById('price').innerHTML = '';
 // while loop end
 }
 })()
