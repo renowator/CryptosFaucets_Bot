@@ -31,11 +31,14 @@ function sleep(ms) {
  const email  = prompt("Enter your email","<here>");
  const pass = prompt("Enter your password", "<here>");
  var welcome = '<br>----------------- BOT STARING -----------------<br>Working on email:" + email + "<br>                   Good Luck!<br>';
- const websites = ["https://freebitcoin.io/free", "https://freeethereum.com/free", "https://freedash.io/free","https://freebinancecoin.com/free","https://coinfaucet.io/free", "https://freecardano.com/free","https://free-tron.com/free"]
+ const websites = ["https://freebitcoin.io/free", "https://freeethereum.com/free", "https://freedash.io/free","https://freebinancecoin.com/free", "https://freechain.link/free","https://coinfaucet.io/free", "https://freecardano.com/free","https://free-tron.com/free"]
+ var useHash = false;
+ var myHash = "";
+
 while(true){
 
   var loopError = false;
-  const browser = await puppeteer.launch({headless: true});
+  const browser = await puppeteer.launch({ headless: true});
   const page = await browser.newPage();
   await page.setViewport({ width: 1866, height: 768});
 
@@ -66,7 +69,21 @@ for (var i = 0; i < websites.length; i++) {
   await sleep(500)
   const element_log = await select(page).getElement('button:contains(LOGIN!)');
   await element_log.click()
-  await page.waitForNavigation();  
+  await page.waitForNavigation();
+
+  if(useHash){
+  await page.type('input[name=hash]', myHash, {delay: 20});
+  const element_hash = await select(page).getElement('button:contains(Go!)');
+  await element_hash.click();
+  await page.waitForNavigation();
+  await page.goto(websites[i]);
+  await page.waitForNavigation();
+  const check = await select(page).getElement('button:contains(ROLL!)');
+  if (check != null){
+    document.getElementById('results').innerHTML += '<br> Code used succesfully! <br>';
+  }
+  }
+
   await autoScroll(page);
   const element_roll = await select(page).getElement('button:contains(ROLL!)');
   await element_roll.click()
@@ -86,7 +103,7 @@ loopError = true
 // catch block end
 }
 // for loop end
-} 
+}
 
   await page.close()
   await browser.close()
@@ -96,7 +113,16 @@ loopError = true
   } else{
   console.log('!!!!!!!!!!!!!!!!! All coins collected succesfully !!!!!!!!!!!!!!!!!!!!!!')
   document.getElementById('results').innerHTML += '<br>All coins were collected!<br>Sleep for an hour';
-  await sleep(3595000);
+  useHash = false;
+  myHash = "";
+  var minCounter = 0;
+  while (minCounter < 60 || useHash){
+  // Sleep 60 seconds
+  await sleep(59990);
+  minCounter = minCounter + 1;
+  }
+
+    //await sleep(3599000);
   }
 // while loop end
 }
