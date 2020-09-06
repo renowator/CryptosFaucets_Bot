@@ -126,7 +126,7 @@ loopError = true
   // Sleep 1 second
   await new Promise(resolve => setInterval(resolve, 990));
   counter = counter + 1;
-  document.getElementById('hash_res').innerHTML = '<br>An error was encountered <br>Time since last roll attempt: ' + parseInt((600-counter)/60) + ' : ' + (600-counter)%60;
+  document.getElementById('hash_res').innerHTML = '<br>An error was encountered <br>Time to new roll: ' + parseInt((600-counter)/60) + ' : ' + (600-counter)%60;
   if(useHash){break;}
   }
   } else{
