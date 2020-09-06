@@ -124,7 +124,7 @@ loopError = true
   var counter = 0;
   while (counter < 600){
   // Sleep 1 second
-  await sleep(999);
+  await new Promise(resolve => setInterval(resolve, 990));
   counter = counter + 1;
   document.getElementById('hash_res').innerHTML = '<br>An error was encountered <br>Time since last roll attempt: ' + parseInt((600-counter)/60) + ' : ' + (600-counter)%60;
   if(useHash){break;}
@@ -138,7 +138,7 @@ loopError = true
   var counter = 0;
   while (counter < 3600){
   // Sleep 1 second
-  await sleep(999);
+  await new Promise(resolve => setInterval(resolve, 990));
   counter = counter + 1;
   document.getElementById('hash_res').innerHTML = '<br>Time to new roll: ' + parseInt((3600-counter)/60) + ' : ' + (3600-counter)%60;
   if(useHash){break;}
