@@ -85,12 +85,12 @@ for (var i = 0; i < websites.length; i++) {
   await page.waitForNavigation();
   await page.goto(websites[i]);
   await sleep(100);
-  const check = await page.evaluate(() => document.querySelector('.timeout-container'))
-  if ( check == null){
-    document.getElementById('hash_res').innerHTML = '<br> Code used succesfully! <br>';
+  const check = await page.evaluate(() => document.querySelector('.minutes').innerText);
+  if (check != ""){
+    document.getElementById('hash_res').innerText = check + 'REMAINING. Code unsuccesfull';
   }
   else{
-      document.getElementById('hash_res').innerHTML = '<br> Your code is not valid... <br>';
+    document.getElementById('hash_res').innerText = 'Your code is being validated!';
   }
   }
 
