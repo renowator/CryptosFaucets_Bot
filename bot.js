@@ -86,8 +86,9 @@ for (var i = 0; i < websites.length; i++) {
   await page.goto(websites[i]);
   await sleep(100);
   const check = await page.evaluate(() => document.querySelector('.minutes').innerText);
-  if (check != ""){
-    document.getElementById('hash_res').innerText = check + 'REMAINING. Code unsuccesfull';
+  let isnum = /^\d+$/.test(check.charAt(0));
+  if (isnum){
+    document.getElementById('hash_res').innerText = check + ' REMAINING. Code unsuccesfull';
   }
   else{
     document.getElementById('hash_res').innerText = 'Your code is being validated!';
