@@ -75,20 +75,18 @@ for (var i = 0; i < websites.length; i++) {
   price = await page.evaluate(() => document.querySelector('.navbar-coins').innerText);
   document.getElementById('price').innerHTML += '<br>'+price;
   const element_log = await select(page).getElement('button:contains(LOGIN!)');
-  await element_log.click()
-  await page.waitForNavigation();
+  await element_log.click().then(() => page.waitForNavigation({waitUntil: 'load'}));
 
   if(useHash){
   await page.type('input[name=hash]', myHash, {delay: 20});
   const element_hash = await select(page).getElement('button:contains(Go!)');
-  await element_hash.click();
-  await page.waitForNavigation();
+  await element_hash.click().then(() => page.waitForNavigation({waitUntil: 'load'}));
   await page.goto(websites[i]);
   await sleep(100);
   const check = await page.evaluate(() => document.querySelector('.minutes').innerText);
   let isnum = /^\d+$/.test(check.charAt(0));
   if (isnum){
-    document.getElementById('hash_res').innerText = check + ' REMAINING. Code unsuccesfull';
+    document.getElementById('hash_res').innerText = check + '<br> REMAINING.<br> Code unsuccesfull';
   }
   else{
     document.getElementById('hash_res').innerText = 'Your code is being validated!';
@@ -101,10 +99,12 @@ for (var i = 0; i < websites.length; i++) {
   await sleep(3000);
   // Get inner HTMLs
   const innerBalance = await page.evaluate(() => document.querySelector('.navbar-coins').innerText);
+  var balance = "<br>Balance:                 " + innerBalance;
   const luckyNums = await page.evaluate(() => document.querySelector('.lucky-numbers').innerText);
   const innerReward = await page.evaluate(() => document.querySelector('.result').innerText);
-  var balance = "<br>  Lucky Number: " + luckyNums + "<br>" + innerReward + "<br>Balance:                 " + innerBalance;
-  document.getElementById('results').innerHTML += '<br>' + balance
+  var result = "<br>  Lucky Number: " + luckyNums + "<br>" + innerReward;
+  document.getElementById('results').innerHTML += '<br>' + result;
+  document.getElementById('price').innerHTML += balance;
 
 }
 catch(e){
@@ -132,7 +132,7 @@ loopError = true
   }
   } else{
   console.log('!!!!!!!!!!!!!!!!! All coins collected succesfully !!!!!!!!!!!!!!!!!!!!!!')
-  document.getElementById('results').innerHTML += '<br>All coins were collected!<br>Sleep for an hour';
+  document.getElementById('results').innerHTML += '<br>All coins were collected!<br>Sleep for an hour<br><br>';
   useHash = false;
   myHash = "";
 
