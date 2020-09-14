@@ -35,13 +35,12 @@ function sleep(ms) {
  const email  = prompt("Enter your email","<here>");
  const pass = prompt("Enter your password", "<here>");
  var welcome = '<br>----------------- BOT STARING -----------------<br>Working on email:" + email + "<br>                   Good Luck!<br>';
- const websites = ["https://freebitcoin.io/free", "https://freeethereum.com/free", "https://freedash.io/free","https://freebinancecoin.com/free", "https://freechain.link/free","https://coinfaucet.io/free", "https://freecardano.com/free","https://free-tron.com/free"]
-
-
+ const websites = ["https://freebitcoin.io/free", "https://freeethereum.com/free", "https://freedash.io/free", "https://freebinancecoin.com/free", "https://freechain.link/free","https://coinfaucet.io/free", "https://freecardano.com/free","https://free-tron.com/free"]
+const browser = await puppeteer.launch({ headless: true});
 while(true){
 
   var loopError = false;
-  const browser = await puppeteer.launch({ headless: true});
+
   const page = await browser.newPage();
   await page.setViewport({ width: 1866, height: 768});
   var price = "";
@@ -117,7 +116,6 @@ loopError = true
 }
 
   await page.close()
-  await browser.close()
   if (loopError){
   document.getElementById('results').innerHTML += '<br>Not all coins were collected.<br>Sleep for 10 minutes';
   useHash = false;
