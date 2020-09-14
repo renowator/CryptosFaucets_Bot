@@ -35,12 +35,13 @@ function sleep(ms) {
  const email  = prompt("Enter your email","<here>");
  const pass = prompt("Enter your password", "<here>");
  var welcome = '<br>----------------- BOT STARING -----------------<br>Working on email:" + email + "<br>                   Good Luck!<br>';
- const websites = ["https://freebitcoin.io/free", "https://freeethereum.com/free", "https://freedash.io/free", "https://freebinancecoin.com/free", "https://freechain.link/free","https://coinfaucet.io/free", "https://freecardano.com/free","https://free-tron.com/free"]
-const browser = await puppeteer.launch({ headless: true});
+ const websites = ["https://free-tron.com/free","https://freebitcoin.io/free", "https://freeethereum.com/free", "https://freedash.io/free", "https://freebinancecoin.com/free", "https://freechain.link/free","https://coinfaucet.io/free", "https://freecardano.com/free"]
+
+
 while(true){
 
   var loopError = false;
-
+ const browser = await puppeteer.launch({ headless: true});
   const page = await browser.newPage();
   await page.setViewport({ width: 1866, height: 768});
   var price = "";
@@ -54,13 +55,13 @@ for (var i = 0; i < websites.length; i++) {
       document.getElementById('hash_res').innerHTML = '';
     }
 
-  await page.goto(websites[i])
+  await page.goto(websites[i]);
   var connect = false;
   var count = 0
   while (!connect && count <= 20){
   try {
   count = count + 1;
-  await page.waitForSelector("input[name=email]", { timeout: 15000 })
+  await page.waitForSelector("input[name=email]", { timeout: 1500 })
   connect = true
 }  catch{
   await sleep(100)
@@ -72,38 +73,52 @@ for (var i = 0; i < websites.length; i++) {
   await page.type('input[name=password]', pass, {delay: 20})
   await sleep(100)
   price = await page.evaluate(() => document.querySelector('.navbar-coins').innerText);
-  document.getElementById('price').innerHTML += '<br>'+price;
+  document.getElementById('price').innerHTML += ' '+price;
   const element_log = await select(page).getElement('button:contains(LOGIN!)');
-  await element_log.click().then(() => page.waitForNavigation({waitUntil: 'load'}));
+  await element_log.click().then(() => page.waitForSelector('input[name=hash]', {timeout: 15000}));
 
   if(useHash){
+    try{
   await page.type('input[name=hash]', myHash, {delay: 20});
   const element_hash = await select(page).getElement('button:contains(Go!)');
-  await element_hash.click().then(() => page.waitForNavigation({waitUntil: 'load'}));
-  await page.goto(websites[i]);
+  await element_hash.click();
   await sleep(100);
+  await page.goto(websites[i]);
+  await page.waitForSelector('input[name=hash]', {timeout: 15000});
   const check = await page.evaluate(() => document.querySelector('.minutes').innerText);
   let isnum = /^\d+$/.test(check.charAt(0));
   if (isnum){
-    document.getElementById('hash_res').innerText = check + '<br> REMAINING.<br> Code unsuccesfull';
+    document.getElementById('hash_res').innerText = check + ' REMAINING.';
   }
   else{
     document.getElementById('hash_res').innerText = 'Your code is being validated!';
+   }
   }
+catch{
+   document.getElementById('hash_res').innerText += 'Code unsuccesfull';
+}
   }
 
   await autoScroll(page);
+
   const element_roll = await select(page).getElement('button:contains(ROLL!)');
-  await element_roll.click()
+  page.on('dialog', async dialog => {
+
+  await page.goto(websites[i]);
+  await page.waitForSelector('input[name=hash]', {timeout: 15000});
+  const element_roll_async = await select(page).getElement('button:contains(ROLL!)');
+  await element_roll_async.click();
+  await sleep(3000);
+});
+  await element_roll.click();
   await sleep(3000);
   // Get inner HTMLs
   const innerBalance = await page.evaluate(() => document.querySelector('.navbar-coins').innerText);
   var balance = "<br>Balance:                 " + innerBalance;
   const luckyNums = await page.evaluate(() => document.querySelector('.lucky-numbers').innerText);
   const innerReward = await page.evaluate(() => document.querySelector('.result').innerText);
-  var result = "<br>  Lucky Number: " + luckyNums + "<br>" + innerReward;
+  var result = "<br>  Lucky Number: " + luckyNums + "<br>" + innerReward + "<br>" + balance;
   document.getElementById('results').innerHTML += '<br>' + result;
-  document.getElementById('price').innerHTML += balance;
 
 }
 catch(e){
@@ -116,6 +131,7 @@ loopError = true
 }
 
   await page.close()
+  await browser.close()
   if (loopError){
   document.getElementById('results').innerHTML += '<br>Not all coins were collected.<br>Sleep for 10 minutes';
   useHash = false;
@@ -145,6 +161,7 @@ loopError = true
 
   }
   document.getElementById('price').innerHTML = '';
+
 // while loop end
 }
 })()

@@ -33,6 +33,7 @@ Welcome to Cryptos bot, on this page you will see your balances </div>
      cursor:pointer;
      border: 2px solid black;"> </div>
 <div id="hash_in">
+  Only use to synchronize multiple websites. May cause website to register unusual activity. Workaround implemented
   <a href='https://twitter.com/cryptosfaucets' target="_blank"> Get codes here</a>
   <input name="searchTxt" type="text" maxlength="512" id="hashTxt" class="hashField" placeholder="Enter Coinfaucets code"/>
 <input id="clickme" type="button" value="Submit code" onclick="useHash = true;
@@ -43,7 +44,8 @@ document.getElementById('hash_res').innerHTML = '<br> Code received! It will be 
 </div>
 <br>
 <div id="hash_res"></div>
-<div id="price"> </div>
+<div> <marquee id="price" behavior="scroll" direction="left"></marquee> </div>
+Special thanks to those who use my referral links!  
 <br>
 To use this bot please register on the following websites using same email/password combination:<br>
       <a href="https://freebitcoin.io/?ref=303045" target="_blank">
