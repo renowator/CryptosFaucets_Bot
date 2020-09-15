@@ -1,7 +1,6 @@
-### PLEASE BE PATIENT WHILE THE WEBSITE IS STILL IN DEVELOPMENT. I WILL ADJUST THE BOT ACCORDINGLY ONCE THE NEW CHANGES ARE CERTAIN.
-#### To continue using the bot with Spanish version of the website you need to change the lookup for Login and Roll buttons:
+#### To continue using the bot with your language version of the website you need to change the lookup for Login and Roll buttons:
 
-in bot.js find "Login!" and "ROLL!" -> replace with Spanish versions
+in bot.js find "Login!" and "ROLL!" -> replace with your language versions
 
 ### Use CryptosFaucets_Bot  bot.js nwjs app to automate crypto faucet claims on Windows or Linux
 ### Use CryptosFaucets_Bot console_bot.js to automate crypto faucet claims on Mac through terminal
