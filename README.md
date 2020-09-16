@@ -33,6 +33,9 @@ in bot.js find "Login!" and "ROLL!" -> replace with your language versions
 [![DASH](https://www.cryptoimgs.com/img/freedash/banners/Banner728x90.jpg)
 ](https://freedash.io/?ref=7688)
 
+[![LINK](https://www.cryptoimgs.com/img/freechain/banners/Banner728x90.jpg)
+](https://freechain.link/?ref=1166)
+
 # Cryptos bot
 
 
@@ -105,27 +108,24 @@ The bot is performing quite well, but still needs to be improved for additional 
 
 Please feel free to use, modify or improve this bot! 
 
-To support this project please register on Cryptos Faucets websites using my referral links and use the bot often:
+To support this project please register on Cryptos Faucets websites using my referral links and use the bot often. You can also share these links and the bot with other people:
 
 
 https://free-tron.com/?ref=2879
 
-
 https://freecardano.com/?ref=221297
-
 
 https://freebitcoin.io/?ref=303045
 
-
 https://freeethereum.com/?ref=27517
 
-
 https://freebinancecoin.com/?ref=27615
-
 
 https://coinfaucet.io/?ref=630522
 
 https://freedash.io/?ref=7688
+
+https://freechain.link/?ref=1166
 
 *Notice:* The USDC, USDT, STEAM and NEM faucets are not included. You can append the urls to these websites in .js file if you wish to automate the rolls for these as well. 
 
