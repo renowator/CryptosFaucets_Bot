@@ -22,7 +22,7 @@ This script is developed to automate rolls on Cryptos Faucets websites given tha
 
 The bot is performing quite well, but still needs to be improved for additional error handling and smarter behaviour to make sure rolls on each website are made every hour. Apart from that more security can be added to protect your credentials.
 
-Please feel free to use, modify or improve this bot! 
+Please feel free to use, modify or improve this bot!
 
 To support this project please register on Cryptos Faucets websites using my referral links and use the bot often. You can also share these links and the bot with other people:
 
@@ -43,7 +43,7 @@ https://freedash.io/?ref=7688
 
 https://freechain.link/?ref=1166
 
-*Notice:* The USDC, USDT, STEAM and NEM faucets are not included. You can append the urls to these websites in .js file if you wish to automate the rolls for these as well. 
+*Notice:* The USDC, USDT, STEAM and NEM faucets are not included. You can append the urls to these websites in .js file if you wish to automate the rolls for these as well.
 
 ### Built With
 * [Node.js](https://nodejs.org/en/)
@@ -85,7 +85,7 @@ apt-get install chromium-browser
 
 To use this bot as a standalone application instead of console you will need to use nwjs package: https://github.com/nwjs/nw.js
 
-YOU CAN ADD THE EXECUTABLE TO AUTOSTART 
+YOU CAN ADD THE EXECUTABLE TO AUTOSTART
 
 Please refer to their Wiki on building an app: https://github.com/nwjs/nw.js/wiki
 
@@ -148,47 +148,7 @@ in bot.js find "Login!" and "ROLL!" -> replace with your language versions
 
 # Cryptos bot
 
-
-
-
-bot.js output example:
-
-
-````
-Attempt to collect coins:
-12 HH || Date:8.17
-Good Luck!
-
-Lucky Number: 0 5 0 0 9
-You have received 0.00000003
-Balance: 0.00001023 BTC
-
-Lucky Number: 0 5 1 9 7
-You have received 0.00000070
-Balance: 0.00023902 ETH
-
-Lucky Number: 0 1 9 1 8
-You have received 0.00000304
-Balance: 0.00012706 DASH
-
-Lucky Number: 0 3 4 8 4
-You have received 0.00001291
-Balance: 0.00352234 BNB
-
-Lucky Number: 0 2 8 8 9
-You have received 0.00050017
-Balance: 0.24599612 XRP
-
-Lucky Number: 0 8 1 1 4
-You have received 0.00107991
-Balance: 0.38953877 ADA
-
-Lucky Number: 0 6 5 9 4
-You have received 0.01023541
-Balance: 4.41411428 TRX
-All coins were collected!
-Sleep for an hour
-````
+![Bot in action](bot.png)
 
 
 Tip: If one of the websites produces errors you can manually claim the coin, then enter free roll code for twitter (https://twitter.com/cryptosfaucets) on all the websites, so the bot keeps running smoothly. Avoid the bot executing every 10 minutes, unless necessary.
@@ -223,7 +183,7 @@ Project Link: [https://github.com/renowator/CryptosFaucets_Bot](https://github.c
 
 
 
-## Another faucet and bot 
+## Another faucet and bot
 
 [![Freebico.in](https://static1.freebitco.in/banners/468x60-3.png)](https://freebitco.in/?r=37175004)
 
