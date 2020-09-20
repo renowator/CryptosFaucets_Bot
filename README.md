@@ -1,85 +1,3 @@
-### PLEASE BE PATIENT WHILE THE WEBSITE IS STILL IN DEVELOPMENT. I WILL ADJUST THE BOT ACCORDINGLY ONCE THE NEW CHANGES ARE CERTAIN.
-#### To continue using the bot with Spanish version of the website you need to change the lookup for Login and Roll buttons:
-
-in bot.js find "Login!" and "ROLL!" -> replace with Spanish versions
-
-### Use CryptosFaucets_Bot  bot.js nwjs app to automate crypto faucet claims on Windows or Linux
-### Use CryptosFaucets_Bot console_bot.js to automate crypto faucet claims on Mac through terminal
-### Now you can enter Twitter free roll codes through the bot!
-#### Register here:
-[![BTC](https://www.cryptoimgs.com/img/freebitcoin/banners/Banner728x90.jpg)
-](https://freebitcoin.io/?ref=303045)
-
-
-[![ETH](https://www.cryptoimgs.com/img/freeethereum/banners/Banner728x90.jpg)
-](https://freeethereum.com/?ref=27517)
-
-
-[![XRP](https://www.cryptoimgs.com/img/coinfaucet/banners/Banner728x90.jpg)
-](https://coinfaucet.io/?ref=630522)
-
-
-[![ADA](https://www.cryptoimgs.com/img/freecardano/banners/Banner728x90.jpg)
-](https://freecardano.com/?ref=221297)
-
-
-[![TRX](https://www.cryptoimgs.com/img/freetron/banners/Banner728x90.jpg)
-](https://free-tron.com/?ref=2879)
-
-
-[![BNB](https://www.cryptoimgs.com/img/freebinancecoin/banners/Banner728x90.jpg)
-](https://freebinancecoin.com/?ref=27615)
-
-
-[![DASH](https://www.cryptoimgs.com/img/freedash/banners/Banner728x90.jpg)
-](https://freedash.io/?ref=7688)
-
-# Cryptos bot
-
-
-
-
-bot.js output example:
-
-
-````
-Attempt to collect coins:
-12 HH || Date:8.17
-Good Luck!
-
-Lucky Number: 0 5 0 0 9
-You have received 0.00000003
-Balance: 0.00001023 BTC
-
-Lucky Number: 0 5 1 9 7
-You have received 0.00000070
-Balance: 0.00023902 ETH
-
-Lucky Number: 0 1 9 1 8
-You have received 0.00000304
-Balance: 0.00012706 DASH
-
-Lucky Number: 0 3 4 8 4
-You have received 0.00001291
-Balance: 0.00352234 BNB
-
-Lucky Number: 0 2 8 8 9
-You have received 0.00050017
-Balance: 0.24599612 XRP
-
-Lucky Number: 0 8 1 1 4
-You have received 0.00107991
-Balance: 0.38953877 ADA
-
-Lucky Number: 0 6 5 9 4
-You have received 0.01023541
-Balance: 4.41411428 TRX
-All coins were collected!
-Sleep for an hour
-````
-
-
-Tip: If one of the websites produces errors you can manually claim the coin, then enter free roll code for twitter (https://twitter.com/cryptosfaucets) on all the websites, so the bot keeps running smoothly. Avoid the bot executing every 10 minutes, unless necessary.
 
 ## Table of Contents
 
@@ -106,27 +24,24 @@ The bot is performing quite well, but still needs to be improved for additional 
 
 Please feel free to use, modify or improve this bot! 
 
-To support this project please register on Cryptos Faucets websites using my referral links and use the bot often:
+To support this project please register on Cryptos Faucets websites using my referral links and use the bot often. You can also share these links and the bot with other people:
 
 
 https://free-tron.com/?ref=2879
 
-
 https://freecardano.com/?ref=221297
-
 
 https://freebitcoin.io/?ref=303045
 
-
 https://freeethereum.com/?ref=27517
 
-
 https://freebinancecoin.com/?ref=27615
-
 
 https://coinfaucet.io/?ref=630522
 
 https://freedash.io/?ref=7688
+
+https://freechain.link/?ref=1166
 
 *Notice:* The USDC, USDT, STEAM and NEM faucets are not included. You can append the urls to these websites in .js file if you wish to automate the rolls for these as well. 
 
@@ -193,6 +108,90 @@ node console_bot
 
 Once you created your executable file, the bot will launch in a new window. It will prompt you to enter email and password when launched. The bot should start working and display your balances on Cryptos Faucets websites in the browser window.
 
+#### To continue using the bot with your language version of the website you need to change the lookup for Login and Roll buttons:
+
+in bot.js find "Login!" and "ROLL!" -> replace with your language versions
+
+### Use CryptosFaucets_Bot  bot.js nwjs app to automate crypto faucet claims on Windows or Linux
+### Use CryptosFaucets_Bot console_bot.js to automate crypto faucet claims on Mac through terminal
+### Now you can enter Twitter free roll codes through the bot!
+#### Register here:
+[![BTC](https://www.cryptoimgs.com/img/freebitcoin/banners/Banner728x90.jpg)
+](https://freebitcoin.io/?ref=303045)
+
+
+[![ETH](https://www.cryptoimgs.com/img/freeethereum/banners/Banner728x90.jpg)
+](https://freeethereum.com/?ref=27517)
+
+
+[![XRP](https://www.cryptoimgs.com/img/coinfaucet/banners/Banner728x90.jpg)
+](https://coinfaucet.io/?ref=630522)
+
+
+[![ADA](https://www.cryptoimgs.com/img/freecardano/banners/Banner728x90.jpg)
+](https://freecardano.com/?ref=221297)
+
+
+[![TRX](https://www.cryptoimgs.com/img/freetron/banners/Banner728x90.jpg)
+](https://free-tron.com/?ref=2879)
+
+
+[![BNB](https://www.cryptoimgs.com/img/freebinancecoin/banners/Banner728x90.jpg)
+](https://freebinancecoin.com/?ref=27615)
+
+
+[![DASH](https://www.cryptoimgs.com/img/freedash/banners/Banner728x90.jpg)
+](https://freedash.io/?ref=7688)
+
+[![LINK](https://www.cryptoimgs.com/img/freechain/banners/Banner728x90.jpg)
+](https://freechain.link/?ref=1166)
+
+# Cryptos bot
+
+
+
+
+bot.js output example:
+
+
+````
+Attempt to collect coins:
+12 HH || Date:8.17
+Good Luck!
+
+Lucky Number: 0 5 0 0 9
+You have received 0.00000003
+Balance: 0.00001023 BTC
+
+Lucky Number: 0 5 1 9 7
+You have received 0.00000070
+Balance: 0.00023902 ETH
+
+Lucky Number: 0 1 9 1 8
+You have received 0.00000304
+Balance: 0.00012706 DASH
+
+Lucky Number: 0 3 4 8 4
+You have received 0.00001291
+Balance: 0.00352234 BNB
+
+Lucky Number: 0 2 8 8 9
+You have received 0.00050017
+Balance: 0.24599612 XRP
+
+Lucky Number: 0 8 1 1 4
+You have received 0.00107991
+Balance: 0.38953877 ADA
+
+Lucky Number: 0 6 5 9 4
+You have received 0.01023541
+Balance: 4.41411428 TRX
+All coins were collected!
+Sleep for an hour
+````
+
+
+Tip: If one of the websites produces errors you can manually claim the coin, then enter free roll code for twitter (https://twitter.com/cryptosfaucets) on all the websites, so the bot keeps running smoothly. Avoid the bot executing every 10 minutes, unless necessary.
 
 ## Roadmap
 
