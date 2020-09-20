@@ -41,7 +41,7 @@ function sleep(ms) {
 while(true){
 
   var loopError = false;
- const browser = await puppeteer.launch({ headless: true});
+ const browser = await puppeteer.launch({ headless: true, ignoreDefaultArgs: ["--enable-automation"]});
   const page = await browser.newPage();
   await page.setViewport({ width: 1866, height: 768});
   var price = "";
@@ -54,7 +54,17 @@ for (var i = 0; i < websites.length; i++) {
     if (!useHash){
       document.getElementById('hash_res').innerHTML = '';
     }
-
+    page.on('dialog', async dialog => {
+  try {
+  await sleep(1000);
+  await page.goto(websites[i]);
+  await page.waitForSelector('input[name=hash]', {timeout: 15000});
+  const element_roll_async = await select(page).getElement('button:contains(ROLL!)');
+  await element_roll_async.click();
+  await sleep(3000);
+} catch{
+}
+});
   await page.goto(websites[i]);
   var connect = false;
   var count = 0
@@ -76,14 +86,14 @@ for (var i = 0; i < websites.length; i++) {
   document.getElementById('price').innerHTML += ' '+price;
   const element_log = await select(page).getElement('button:contains(LOGIN!)');
   await element_log.click().then(() => page.waitForSelector('input[name=hash]', {timeout: 15000}));
-
   if(useHash){
     try{
   await page.type('input[name=hash]', myHash, {delay: 20});
   const element_hash = await select(page).getElement('button:contains(Go!)');
   await element_hash.click();
-  await sleep(100);
+  await sleep(3000);
   await page.goto(websites[i]);
+  await sleep(3000);
   await page.waitForSelector('input[name=hash]', {timeout: 15000});
   const check = await page.evaluate(() => document.querySelector('.minutes').innerText);
   let isnum = /^\d+$/.test(check.charAt(0));
@@ -102,14 +112,6 @@ catch{
   await autoScroll(page);
 
   const element_roll = await select(page).getElement('button:contains(ROLL!)');
-  page.on('dialog', async dialog => {
-
-  await page.goto(websites[i]);
-  await page.waitForSelector('input[name=hash]', {timeout: 15000});
-  const element_roll_async = await select(page).getElement('button:contains(ROLL!)');
-  await element_roll_async.click();
-  await sleep(3000);
-});
   await element_roll.click();
   await sleep(3000);
   // Get inner HTMLs
