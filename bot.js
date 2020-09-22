@@ -25,8 +25,6 @@ async function autoScroll(page){
 }
 
 
-
-
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -39,8 +37,7 @@ function sleep(ms) {
 
 
 while(true){
-
-  var loopError = false;
+ var loopError = false;
  const browser = await puppeteer.launch({ headless: true, ignoreDefaultArgs: ["--enable-automation"]});
   const page = await browser.newPage();
   await page.setViewport({ width: 1866, height: 768});
@@ -50,7 +47,7 @@ while(true){
   document.getElementById('results').innerHTML += '<br> Attempt to collect coins: <br>' + date +'<br>          Good Luck!';
 for (var i = 0; i < websites.length; i++) {
 
-  try{
+try{
     if (!useHash){
       document.getElementById('hash_res').innerHTML = '';
     }
