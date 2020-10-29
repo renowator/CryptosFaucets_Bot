@@ -1,3 +1,7 @@
+### WARNIUNG: If your bot gets stuck, I'd suggest to open browser by setting headless mode as false:
+
+ const browser = await puppeteer.launch({ headless: false, ...
+
 
 ## Table of Contents
 
