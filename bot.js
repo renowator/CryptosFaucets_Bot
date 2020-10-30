@@ -84,7 +84,19 @@ try{
   price = await page.evaluate(() => document.querySelector('.navbar-coins').innerText);
   document.getElementById('price').innerHTML += ' '+price;
   const element_log = await select(page).getElement('button:contains(LOGIN!)');
+  var connect = false;
+  var count = 0
+  while (!connect && count <= 20){
+  try {
   await element_log.click().then(() => page.waitForSelector('input[name=hash]', {timeout: 15000}));
+  count = count + 1;
+  connect = true
+}  catch{
+  await sleep(100)
+}
+}
+  await sleep(100)
+
   if(useHash){
     try{
   await page.type('input[name=hash]', myHash, {delay: 20});
