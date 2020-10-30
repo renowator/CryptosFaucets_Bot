@@ -142,7 +142,7 @@ loopError = true
   document.getElementById('results').innerHTML += '<br>Not all coins were collected.<br>Sleep for 10 minutes';
   myHash = "";
   var counter = 0;
-  while (counter < 600){
+  while (counter < 3600){
   // Sleep 1 second
   await sleep(990);
   counter = counter + 1;
