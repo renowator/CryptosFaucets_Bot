@@ -88,8 +88,9 @@ try{
   var count = 0
   while (!connect && count <= 20){
   try {
-  await element_log.click().then(() => page.waitForSelector('input[name=hash]', {timeout: 15000}));
   count = count + 1;
+  await element_log.click().then(() => page.waitForSelector('input[name=hash]', {timeout: 15000}));
+
   connect = true
 }  catch{
   await sleep(100)
