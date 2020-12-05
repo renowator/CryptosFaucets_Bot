@@ -1,188 +1,72 @@
-
 const select = require ('puppeteer-select');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-extra');
+//Using Stealth plugin for bypassing bot checks
+const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+//Using Adblock plugin for blocking pop-ups and ads
+const AdblockerPlugin = require('puppeteer-extra-plugin-adblocker')
+var fs = require('fs');
 
-var useHash = false;
-var rollForHash = false;
-var myHash = "";
-
-async function autoScroll(page){
-    await page.evaluate(async () => {
-        await new Promise((resolve, reject) => {
-            var totalHeight = 0;
-            var distance = 50;
-            var timer = setInterval(() => {
-                var scrollHeight = document.body.scrollHeight;
-                window.scrollBy(0, distance);
-                totalHeight += distance;
-
-                if(totalHeight >= scrollHeight){
-                    clearInterval(timer);
-                    resolve();
-                }
-            }, 100);
-        });
-    });
-}
-
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
+puppeteer.use(AdblockerPlugin());
+puppeteer.use(StealthPlugin());
 (async () => {
- const email  = prompt("Enter your email","<here>");
- const pass = prompt("Enter your password", "<here>");
- var welcome = '<br>----------------- BOT STARING -----------------<br>Working on email:" + email + "<br>                   Good Luck!<br>';
- const websites = ["https://freebitcoin.io/set-language/en", "https://freeethereum.com/set-language/en", "https://freedash.io/set-language/en", "https://free-ltc.com/set-language/en", "https://freebinancecoin.com/set-language/en", "https://freechain.link/set-language/en","https://coinfaucet.io/set-language/en", "https://freecardano.com/set-language/en", "https://free-tron.com/set-language/en"]
-
-
-while(true){
- var loopError = false;
- const browser = await puppeteer.launch({ headless: true, ignoreDefaultArgs: ["--enable-automation"]});
+  //Please enter your email and password
+ const email  = 'Your email here';
+ const pass = 'Your password here';
+ //Websites and their minimal withdrawal amount respectively (minimal withdrawal requirements may change)
+ const websites = ["https://freebitcoin.io/", "https://freeethereum.com/", "https://freedash.io/", "https://freebinancecoin.com/", "https://freechain.link/","https://coinfaucet.io/", "https://freecardano.com/", "https://free-tron.com/", "https://free-ltc.com/", "https://freenem.com/","https://freesteam.io/","https://freetether.com/","https://freeusdcoin.com/","https://freeneo.io/"];
+ const withdraw = ['0.00020000','0.00500000','0.01000000','0.05000000','0.10000000','1.00000000','5.00000000','30.00000000','0.01000000','5.00000000','5.00000000','1.00000000','1.00000000','1.00000000'];
+ //Setting path for the log file
+ const path = 'log.txt';
+ //Launching browser
+ const browser = await puppeteer.launch({ headless: true, ignoreDefaultArgs: ["--enable-automation"], args: ['--no-sandbox']});
   const page = await browser.newPage();
   await page.setViewport({ width: 1866, height: 768});
   await page.setDefaultTimeout(25000);
-  var price = "";
+  //Appending current date to the log file
   var today = new Date();
-  var date = '      ' + today.getHours()+' HH || Date:'+(today.getMonth()+1)+'.'+today.getDate();
-  document.getElementById('results').innerHTML += '<br> Attempt to collect coins: <br>' + date +'<br>          Good Luck!';
-for (var i = 0; i < websites.length; i++) {
+  fs.appendFile(path,today + '\n', (err) => {if (err) throw err;});
+for (var i = 0; i < websites.length; ++i) {
 
 try{
-    if (!useHash){
-      document.getElementById('hash_res').innerHTML = '';
-    }
-    page.on('dialog', async dialog => {
-  try {
-  await sleep(1000);
-  await page.goto(websites[i]);
-  await page.waitForSelector('input[name=hash]', {timeout: 15000});
-  const element_roll_async = await select(page).getElement('button:contains(ROLL!)');
-  await element_roll_async.click();
-  await sleep(3000);
-} catch{
-}
-});
-  await page.goto(websites[i]);
-  var connect = false;
-  var count = 0
-  while (!connect && count <= 20){
-  try {
-  count = count + 1;
-  await page.waitForSelector("input[name=email]", { timeout: 1500 })
-  connect = true
-}  catch{
-  await sleep(100)
-  await page.goto(websites[i])
-}
-}
-  await sleep(100)
+  //Setting language of website to English
+  await page.goto(websites[i]+'set-language/en', {waitUntil: 'networkidle0', timeout: 60000 });
+  //Signing in
   await page.type('input[name=email]', email, {delay: 20})
   await page.type('input[name=password]', pass, {delay: 20})
-  await sleep(100)
-  price = await page.evaluate(() => document.querySelector('.navbar-coins').innerText);
-  document.getElementById('price').innerHTML += ' '+price;
   const element_log = await select(page).getElement('button:contains(LOGIN!)');
-  var connect = false;
-  var count = 0
-  while (!connect && count <= 20){
-  try {
-  count = count + 1;
-  await element_log.click().then(() => page.waitForSelector('input[name=hash]', {timeout: 15000}));
-
-  connect = true
-}  catch{
-  await sleep(100)
-}
-}
-  await sleep(100)
-
-  if(useHash){
-    try{
-  await page.type('input[name=hash]', myHash, {delay: 20});
-  const element_hash = await select(page).getElement('button:contains(Go!)');
-  await element_hash.click();
-  await sleep(3000);
-  await page.goto(websites[i]);
-  await sleep(3000);
-  await page.waitForSelector('input[name=hash]', {timeout: 15000});
-  const check = await page.evaluate(() => document.querySelector('.minutes').innerText);
-  let isnum = /^\d+$/.test(check.charAt(0));
-  if (isnum){
-    document.getElementById('hash_res').innerText = check + ' REMAINING.';
-  }
-  else{
-    document.getElementById('hash_res').innerText = 'Your code is being validated!';
-   }
-  }
-catch{
-   document.getElementById('hash_res').innerText += 'Code unsuccesfull';
-}
-  }
-  else{
-
-  await autoScroll(page);
-
+  await element_log.click();
+  const navigationPromise = page.waitForNavigation();
+  await navigationPromise;
+  //Appending current website number to the log file
+  fs.appendFile(path, (i<10 ? '0' : '')+i+ ': ',  (err) => {if(err) throw err;});
+  //Waiting for countdown timer to disappear and rolling (timeout: 30 mins)
   const element_roll = await select(page).getElement('button:contains(ROLL!)');
+  await page.waitForSelector('.roll-wrapper', {visible: true, timeout:1800000});
   await element_roll.click();
-  await sleep(3000);
-  // Get inner HTMLs
-  const innerBalance = await page.evaluate(() => document.querySelector('.navbar-coins').innerText);
-  var balance = "<br>Balance:                 " + innerBalance;
+  await page.waitForSelector('.timeout-wrapper', {visible: true});
+  //Timeout for more even result scrapping
+  await new Promise((resolve, reject) => setTimeout(resolve, 8000));
+  //Getting rolling results from the page
   const luckyNums = await page.evaluate(() => document.querySelector('.lucky-numbers').innerText);
+  var result = luckyNums.replace(/[\n\s+]/g, '');
   const innerReward = await page.evaluate(() => document.querySelector('.result').innerText);
-  var result = "<br>  Lucky Number: " + luckyNums + "<br>" + innerReward + "<br>" + balance;
-  document.getElementById('results').innerHTML += '<br>' + result;
-}
-
+  const reward = innerReward.replace(/[^.\d]/g,'')
+  result +=(reward.length>10?'  ':'  0')+ reward;
+  const innerBalance = await page.evaluate(() => document.querySelector('.navbar-coins').innerText);
+  const balance = innerBalance.replace(/[^.\d]/g,'');
+  result += (balance.length>10?' ':' 0')+balance;
+  var percentage = ((parseFloat(balance)/parseFloat(withdraw[i]))*100).toFixed(3);
+  //Appending rolling results to the log file
+  result += (withdraw[i].length>10 ? ' ' : ' 0')+withdraw[i]+' ['+percentage+'%]\n';
+  fs.appendFile(path,result, (err) => {if(err) throw err;});
 }
 catch(e){
-var message = "Error was encountered on: " + websites[i];
-document.getElementById('results').innerHTML += '<br>!!!!!!!!!!!!!!!!!!!!!!!!!<br>' + message + '<br>!!!!!!!!!!!!!!!!!!!!!!!!!<br>' + e.message ;
-loopError = true
-// catch block end
+var message = 'Error : ' + e.message + '\n';
+fs.appendFile(path,message, (err) => {if(err) throw err;})
 }
-// for loop end
 }
-
-  await page.close()
-  await browser.close()
-  if(useHash){rollForHash = true;}
-  useHash = false;
-  if (!rollForHash){
-  if (loopError){
-  document.getElementById('results').innerHTML += '<br>Not all coins were collected.<br>Sleep for 10 minutes';
-  myHash = "";
-  var counter = 0;
-  while (counter < 3600){
-  // Sleep 1 second
-  await sleep(990);
-  counter = counter + 1;
-  document.getElementById('hash_res').innerHTML = '<br>An error was encountered <br>Time to new roll: ' + parseInt((3600-counter)/60) + ' : ' + (3600-counter)%60;
-  if(useHash){break;}
-  }
-  } else{
-  console.log('!!!!!!!!!!!!!!!!! All coins collected succesfully !!!!!!!!!!!!!!!!!!!!!!')
-  document.getElementById('results').innerHTML += '<br>All coins were collected!<br>Sleep for an hour<br><br>';
-  myHash = "";
-
-  var counter = 0;
-  while (counter < 3600){
-  // Sleep 1 second
-  await sleep(990);
-  counter = counter + 1;
-  document.getElementById('hash_res').innerHTML = '<br>Time to new roll: ' + parseInt((3600-counter)/60) + ' : ' + (3600-counter)%60;
-  if(useHash){break;}
-  }
-
-  }
-}
-else{
-  rollForHash = false;
-}
-  document.getElementById('price').innerHTML = '';
-
-// while loop end
-}
+  //Closing browser and application
+  await page.close();
+  await browser.close();
+  process.exit();  
 })()
