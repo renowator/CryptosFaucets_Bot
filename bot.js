@@ -42,7 +42,7 @@ while(true){
  const browser = await puppeteer.launch({ headless: true, ignoreDefaultArgs: ["--enable-automation"]});
   const page = await browser.newPage();
   await page.setViewport({ width: 1866, height: 768});
-  await page.setDefaultTimeout(25000);
+  await page.setDefaultTimeout(55000);
   var price = "";
   var today = new Date();
   var date = '      ' + today.getHours()+' HH || Date:'+(today.getMonth()+1)+'.'+today.getDate();
