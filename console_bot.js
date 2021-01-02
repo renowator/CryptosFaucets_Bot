@@ -31,7 +31,7 @@ function sleep(ms) {
 (async () => {
  const email  =process.env.EMAIL;
  const pass = process.env.PASS;
- console.log("----------------- BOT STARING -----------------");
+ console.log("----------------- BOT STARTING -----------------");
  console.log("Working on email:");
  console.log(email)
  console.log("\n                   Good Luck!\n");
@@ -89,7 +89,7 @@ loopError = true
   await sleep(600000);
   } else{
   console.log('!!!!!!!!!!!!!!!!! All coins collected succesfully !!!!!!!!!!!!!!!!!!!!!!')
-  console.log("Going to sleep\n             zzz\n                    zzz\n         See you in an hour                zzz")
+  console.log("Going to sleep\n             zzz\n                    zzz\n         See you in one hour                zzz")
   await sleep(3600000);
   console.log('----------------- WAKE UP -----------------');
   }
