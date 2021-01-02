@@ -1,5 +1,6 @@
+require('dotenv').config()
 
-const select = require ('puppeteer-select');
+const select = require ('puppeteer-select')
 const puppeteer = require('puppeteer')
 
 async function autoScroll(page){
@@ -34,7 +35,7 @@ function sleep(ms) {
  console.log("Working on email:");
  console.log(email)
  console.log("\n                   Good Luck!\n");
- const websites = ["https://freecardano.com","https://freeethereum.com","https://freebitcoin.io","https://free-tron.com","https://coinfaucet.io"]
+ const websites = ["https://freeethereum.com","https://freebitcoin.io","https://freebitcoin.io","https://freebinancecoin.com","https://freedash.io","https://freecardano.com"]
 while(true){
 
   var loopError = false;

@@ -10,6 +10,7 @@
   "description": "A simple script to automatically colect coins from cryptosfaucets",
   "dependencies": {
     "chrome-cookies-secure": "^1.3.2",
+    "dotenv": "^8.2.0",
     "puppeteer": "^5.5.0",
     "puppeteer-select": "^1.0.3"
   }
