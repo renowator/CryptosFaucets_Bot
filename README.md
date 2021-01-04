@@ -52,26 +52,37 @@ LINK : https://freechain.link/?ref=1166
 
 OR:
 
-
 BTC : https://freebitcoin.io/?ref=376363
+
 LTC : https://free-ltc.com/?ref=38234
+
 ETH : https://freeethereum.com/?ref=107158
+
 DASH : https://freedash.io/?ref=59475
+
 BNB : https://freebinancecoin.com/?ref=77687
+
 ADA : https://freecardano.com/?ref=253723
 
-*Notice:* The USDC, USDT, STEAM and NEM faucets are not included. You can append the urls to these websites in .js file if you wish to automate the rolls for these as well.
+USDC : https://freeusdcoin.com/?ref=80753
+
+USDT : https://freetether.com/?ref=119712
+
+TRX : https://free-tron.com/?ref=111513
+
+*Notice:* The USDC, USDT, STEAM and NEM faucets are not included. You can append the urls to these websites in [website file](config/websites.txt) file if you wish to automate the rolls for these as well.
 
 ### Built With
 * [Node.js](https://nodejs.org/en/)
 * [Puppeteer](https://github.com/puppeteer/puppeteer)
 * [Chromium](https://www.chromium.org/)
+* [Dotenv](https://github.com/motdotla/dotenv)
 
 
 
 ## Getting Started
 
-To run this script you need to install Node.js and Puppeteer, Puppeteer-select and Chromium web browser.
+To run this script you need to install Node.js. Once done, all dependencies will be installed by using [package.json](package.json)
 
 ### Prerequisites
 
@@ -82,21 +93,11 @@ https://nodejs.org/en/download/
 npm install npm
 ```
 
-* puppeteer
+Go to the top of project directory and run
 ```sh
-npm install puppeteer
+npm install
 ```
-
-* puppeteer-select
-```sh
-npm install puppeteer-select
-```
-
-* chromium-browser
-```sh
-apt-get install chromium-browser
-````
-
+This will install all dependencies required by the bot and voila.
 
 ### Installation
 
@@ -118,7 +119,7 @@ To run console_bot.js you need to specify console environment variables EMAIL an
 
 
 ````
-node console_bot
+node console_bot.js
 ````
 
 ### Using executable obtained from nwjs
@@ -162,6 +163,12 @@ in bot.js find "Login!" and "ROLL!" -> replace with your language versions
 
 [![LINK](https://www.cryptoimgs.com/img/freechain/banners/Banner728x90.jpg)
 ](https://freechain.link/?ref=1166)
+
+[![USDC](https://www.cryptoimgs.com/img/freeusdcoin/banners/Banner728x90.jpg)
+](https://freeusdcoin.com/?ref=80753)
+
+[![USDT](https://www.cryptoimgs.com/img/freetether/banners/Banner728x90.jpg)
+](https://freetether.com/?ref=119712)
 
 # Cryptos bot
 

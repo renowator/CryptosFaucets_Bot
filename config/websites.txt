@@ -5,4 +5,5 @@ https://freebinancecoin.com,
 https://freedash.io,
 https://freecardano.com,
 https://freetether.com,
-https://freeusdcoin.com
+https://freeusdcoin.com,
+https://free-tron.com
