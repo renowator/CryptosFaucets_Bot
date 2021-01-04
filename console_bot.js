@@ -26,6 +26,10 @@ async function autoScroll(page) {
 }
 
 
+function dateToPrint() {
+  const now = new Date();
+  return '[' + now.getHours() + 'h' + ( (now.getMinutes() < 10 ? '0' : '') + now.getMinutes() ) + '] '
+}
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
@@ -48,16 +52,13 @@ function sleep(ms) {
   while (true) {
 
     let loopError = false;
-    const browser = await puppeteer.launch({ headless: true });
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1866, height: 768});
+    const browser = await puppeteer.launch({ headless: true })
+    const page = await browser.newPage()
+    await page.setViewport({ width: 1866, height: 768})
 
-    console.log('----------------- ATTEMPTING ROLLS -----------------')
-    var today = new Date()
-    var date = today.getHours()+'HH Date:'+(today.getMonth()+1)+'.'+today.getDate()
-    console.log(date);
+    console.log(dateToPrint() + '----------------- ATTEMPTING ROLLS -----------------')
 
-    for (var i = 0; i < websites.length; i++) {
+    for (let i = 0; i < websites.length; i++) {
 
       try {
 
@@ -94,8 +95,9 @@ function sleep(ms) {
       console.log('############## There was an error, retrying in 10 mins #############')
       await sleep(600000)
     } else {
-      console.log('!!!!!!!!!!!!!!!!! All coins collected succesfully !!!!!!!!!!!!!!!!!!!!!!')
-      console.log("Going to sleep\n             zzz\n                    zzz\n         See you in one hour                zzz")
+      console.log('🏆 All coins have been collected successfully! Well job')
+      console.log(dateToPrint() + "Going to sleep\n   See you in one hour 💤")
+
       await sleep(3600000)
       console.log('----------------- WAKE UP -----------------')
     }
