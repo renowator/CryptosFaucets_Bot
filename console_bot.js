@@ -1,7 +1,10 @@
 require('dotenv').config()
 
+const fs = require('fs').promises
 const select = require ('puppeteer-select')
 const puppeteer = require('puppeteer')
+
+const WEBSITES_FS = 'config/websites.txt'
 
 async function autoScroll(page) {
   await page.evaluate(async () => {
@@ -28,19 +31,24 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
+
+/**
+ * Main entry script
+ */
 (async () => {
   const email = process.env.EMAIL
   const pass = process.env.PASS
-  console.log('----------------- BOT STARTING -----------------')
-  console.log('Working on email:')
-  console.log(email)
-  console.log("\n                   Good Luck!\n")
-  const websites = ['https://freeethereum.com', 'https://free-ltc.com', 'https://freebitcoin.io', 'https://freebinancecoin.com', 'https://freedash.io', 'https://freecardano.com']
+  console.log('🦾 ----------------- BOT STARTING ----------------- 🦾')
+  console.log('Use email:', email)
+  console.log("\n  🍀 Good Luck!\n")
+  const websitesFs = await fs.readFile(WEBSITES_FS, 'utf8')
+  // We have to force en language, otherwise we get another language anf bot does not work
+  const websites = websitesFs.replace(/\n/g, '').split(',').map(x => x + '/set-language/en')
 
   while (true) {
 
-    var loopError = false;
-    const browser = await puppeteer.launch({headless: true});
+    let loopError = false;
+    const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
     await page.setViewport({ width: 1866, height: 768});
 
@@ -69,15 +77,12 @@ function sleep(ms) {
         await sleep(2000);
         // Get inner HTML
         const innerText = await page.evaluate(() => document.querySelector('.navbar-coins').innerText)
-        var balance = "Balance:                 " + innerText;
-        console.log(balance);
-        console.log("\n\n\n                      SUCCESS! Coin claimed!")
-
+        console.log('Balance 🏛️ ->', innerText)
+        console.log("   👍 SUCCESS! Coin claimed!\n\n")
       } catch(e) {
-        var message = "Error was encountered on: " + websites[i]
-        console.log(message)
+        console.log('Error was encountered on: ', websites[i])
         console.error("Error: " + e.message)
-        console.log("\n\n\n                      FAIL. Coin not claimed.")
+        console.log("  👎 FAIL. Coin not claimed. ❌\n\n")
         loopError = true
       }
 
