@@ -34,21 +34,31 @@ Please feel free to use, modify or improve this bot!
 To support this project please register on Cryptos Faucets websites using my referral links and use the bot often. You can also share these links and the bot with other people:
 
 
-https://free-tron.com/?ref=2879
+TRX : https://free-tron.com/?ref=2879
 
-https://freecardano.com/?ref=221297
+ADA : https://freecardano.com/?ref=221297
 
-https://freebitcoin.io/?ref=303045
+BTC : https://freebitcoin.io/?ref=303045
 
-https://freeethereum.com/?ref=27517
+ETH: https://freeethereum.com/?ref=27517
 
-https://freebinancecoin.com/?ref=27615
+BNB : https://freebinancecoin.com/?ref=27615
 
-https://coinfaucet.io/?ref=630522
+XRP : https://coinfaucet.io/?ref=630522
 
-https://freedash.io/?ref=7688
+DASH : https://freedash.io/?ref=7688
 
-https://freechain.link/?ref=1166
+LINK : https://freechain.link/?ref=1166
+
+OR:
+
+
+BTC : https://freebitcoin.io/?ref=376363
+LTC : https://free-ltc.com/?ref=38234
+ETH : https://freeethereum.com/?ref=107158
+DASH : https://freedash.io/?ref=59475
+BNB : https://freebinancecoin.com/?ref=77687
+ADA : https://freecardano.com/?ref=253723
 
 *Notice:* The USDC, USDT, STEAM and NEM faucets are not included. You can append the urls to these websites in .js file if you wish to automate the rolls for these as well.
 
