@@ -115,8 +115,12 @@ Or download all code from this package directly into nwjs package and run nw.exe
 
 ### Using the console and console_bot.js
 
-To run console_bot.js you need to specify console environment variables EMAIL and PASS. Then you can launch the bot with
+To run console_bot.js you need to specify environment variables. Copy [env.sample](env.sample)
 
+```sh
+cp env.sample .env
+```
+and fill your email and your password. Then you can launch the bot with
 
 ````
 node console_bot.js
@@ -179,7 +183,7 @@ Tip: If one of the websites produces errors you can manually claim the coin, the
 
 ## Roadmap
 
-The project was developed for personal use. The bot is usable, but might need some improvements like advanced password protection, ErrorHandling, UI and bot contol.
+The project was developed for personal use. The bot is usable, but might need some improvements like advanced password protection, ErrorHandling, UI and bot contol. I guess we have to look for with [electronjs](https://www.electronjs.org/)
 
 
 
