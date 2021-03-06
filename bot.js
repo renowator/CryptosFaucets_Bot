@@ -34,7 +34,7 @@ function sleep(ms) {
  const email  = prompt("Enter your email","<here>");
  const pass = prompt("Enter your password", "<here>");
  var welcome = '<br>----------------- BOT STARING -----------------<br>Working on email:" + email + "<br>                   Good Luck!<br>';
- const websites = ["https://freebitcoin.io/set-language/en", "https://freeethereum.com/set-language/en", "https://freedash.io/set-language/en", "https://free-ltc.com/set-language/en", "https://freebinancecoin.com/set-language/en", "https://freechain.link/set-language/en","https://coinfaucet.io/set-language/en", "https://freecardano.com/set-language/en", "https://free-tron.com/set-language/en"]
+ const websites = ["https://freebitcoin.io/set-language/en", "https://freeethereum.com/set-language/en", "https://freedash.io/set-language/en", "https://free-ltc.com/set-language/en", "https://freebinancecoin.com/set-language/en", "https://freechain.link/set-language/en","https://coinfaucet.io/set-language/en", "https://freecardano.com/set-language/en", "https://free-tron.com/set-language/en", "https://free-doge.com/set-language/en" ]
 
 
 while(true){

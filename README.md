@@ -50,6 +50,9 @@ DASH : https://freedash.io/?ref=7688
 
 LINK : https://freechain.link/?ref=1166
 
+DOGE: https://free-doge.com/?ref=21346
+
+
 OR:
 
 BTC : https://freebitcoin.io/?ref=376363
