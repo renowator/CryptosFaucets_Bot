@@ -125,6 +125,12 @@ const duringToPrint = (timeInMs, offsetInMs = 0) => {
       const browser = await puppeteer.launch({ headless: true, args: ['--lang=en']})
       const page = await browser.newPage()
       await page.setViewport({ width: 1866, height: 768})
+      
+      //if bot meets alert verify bot, accept it
+      page.on('dialog', async dialog => {
+      console.log(dialog.accept());
+      console.log('\n Dialog bot verification accepted...! 😎🤖 \n')
+      });
 
       console.log(dateToPrint() + '----------------- ATTEMPTING ROLLS -----------------')
 
@@ -148,9 +154,36 @@ const duringToPrint = (timeInMs, offsetInMs = 0) => {
           await sleep(2000);
           // Get inner HTML
           const innerText = await page.evaluate(() => document.querySelector('.navbar-coins').innerText)
+          const cleaninnerText = (innerText.substr(0,10);
+          const cleantoken = (innerText.substr(11)).trim();
           console.log('Balance 🏛️ ->', innerText);
+          const minwallet = [process.env['MIN_' + cleantoken]
           console.log("   👍 SUCCESS! Coin claimed!\n\n")
 
+          // automatically withdraw
+          if (cleaninnerText >= minwallet) {
+              console.log('the time has come to withdraw..!')
+              //open popup withdraw
+              const popup = await select(page).getElement('button:contains(Withdraw)')
+              await popup.click()
+              const minimum = await page.evaluate(() => document.querySelector('.header.bg-3').innerText)
+              const cleanminimum = (minimum.substr(15,10)).trim();
+              const amount = await select(page).getElement('label:contains((Withdraw All))')
+              await amount.click()
+              await sleep(500)
+              await page.type('input[type="text"][class="form-control wallet-address"]', wallet, {delay : 20})
+              await sleep(500)
+              await page.evaluate(() => {
+              [...document.querySelectorAll('.main-button-2.main-button-blue.withdraw-now.bg-3')].find(element => element.textContent === 'Withdraw').click();
+              });
+              await sleep(3000)
+            }
+      
+      
+      
+        
+                             
+                             
         } catch(e) {
           console.log('Error was encountered on: ', websites[i])
           console.error("Error: " + e.message)
