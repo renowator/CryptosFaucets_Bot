@@ -154,10 +154,10 @@ const duringToPrint = (timeInMs, offsetInMs = 0) => {
           await sleep(2000);
           // Get inner HTML
           const innerText = await page.evaluate(() => document.querySelector('.navbar-coins').innerText)
-          const cleaninnerText = (innerText.substr(0,10);
+          const cleaninnerText = (innerText.substr(0,10));
           const cleantoken = (innerText.substr(11)).trim();
           console.log('Balance 🏛️ ->', innerText);
-          const minwallet = [process.env['MIN_' + cleantoken]
+          const minwallet = [process.env['MIN_' + cleantoken]]
           console.log("   👍 SUCCESS! Coin claimed!\n\n")
 
           // automatically withdraw
