@@ -7,3 +7,10 @@ https://freecardano.com,
 https://freetether.com,
 https://freeusdcoin.com,
 https://free-tron.com
+https://free-tron.com,
+https://free-doge.com,
+https://coinfaucet.io,
+https://freenem.com,
+https://freesteam.io,
+https://freechainlink.io,
+https://freeneo.io
