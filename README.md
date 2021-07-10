@@ -1,10 +1,6 @@
-### Bot works in any language region
-### 机器人适用于任何语言区域  -- 加密货币免费硬币机器人
-### ボットは、任意の言語領域で動作します -- 暗号通貨無料コインボット
-### Bot fonctionne dans n'importe quelle région linguistique
-### Bot trabalha em qualquer região linguística
-### Бот работает в любом языковом регионе
-### Bot funciona en cualquier región de idioma
+### Bot does not work anymore - CAPTCHA added by website owners !!!
+
+### If you would like to implement tensorjs CAPTCHA solver, please feel free to try
 
 ## Table of Contents
 
